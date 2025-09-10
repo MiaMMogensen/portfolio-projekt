@@ -1,0 +1,656 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #edeee8;
+}
+
+/* Fonte */
+@font-face {
+  font-family: "impact";
+  src: url("./assets/fonts/impact.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("./assets/fonts/Quicksand-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("./assets/fonts/Quicksand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand SemiBold";
+  src: url("./assets/fonts/Quicksand-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hourglass of Shine";
+  src: url("./assets/fonts/Hourglass of Shine.otf") format("opentype");
+}
+
+/* -------- Header -------- */
+header {
+  padding: 15px 50px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.nav-center ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-center a {
+  text-decoration: none;
+  font-family: "Quicksand Regular";
+  font-size: 1.5rem;
+  color: #41729f;
+}
+
+.social-media-icons img {
+  height: 33px;
+  margin-left: 30px;
+}
+
+/* -------- Hero -------- */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 4rem;
+  position: relative;
+}
+
+.hero-left {
+  position: relative;
+  margin-right: -10rem; /* overlap ind i billedet */
+  z-index: 2;
+  margin-top: 15rem;
+}
+
+.hero-right {
+  position: relative;
+  margin-left: -8rem; /* overlap ind i teksten */
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 42rem;
+  height: auto;
+  display: block;
+}
+
+.title {
+  margin: 0;
+  position: relative;
+  line-height: 1.1;
+}
+
+.title .name {
+  font-family: "Hourglass of Shine";
+  color: #0f3c65;
+  font-size: clamp(2rem, 4vw, 4.375rem);
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin-bottom: -2.5rem;
+  margin-left: 3.5rem;
+}
+
+.portfolio {
+  font-size: clamp(4rem, 15vw, 16rem);
+  color: #41729f;
+  font-family: "impact";
+  line-height: 1;
+  position: relative;
+  z-index: 2; /* under navnet, men foran billedet */
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.875rem);
+  color: #0f3c65;
+  font-family: "Quicksand Regular";
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 3;
+  margin-left: 5.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #0f3c65;
+  width: 0;
+  animation: typing 4s steps(55, end) forwards, blink 0.75s step-end 7 forwards;
+}
+
+/* Skrive animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 46ch; /* præcis længde på teksten */
+  }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0f3c65;
+  }
+}
+
+/* -------- Stjerner -------- */
+
+@keyframes blinkStar {
+  0%,
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30%,
+  60% {
+    opacity: 0;
+    transform: scale(0.8);
+  } /* stjernen væk */
+  70%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.star {
+  position: absolute;
+  z-index: 4;
+}
+
+.star1 {
+  top: 5%;
+  left: 15%;
+  width: 110px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out;
+}
+.star2 {
+  top: 15%;
+  left: 20%;
+  width: 64px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out 1s;
+}
+.star3 {
+  top: 75%;
+  left: 3%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 1.5s infinite ease-in-out 0.5s;
+}
+
+.star4 {
+  top: 33%;
+  right: 41.5%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 4s infinite ease-in-out;
+}
+
+.star5 {
+  top: 20%;
+  right: 6.5%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 2.5s infinite ease-in-out 2s;
+}
+
+/* -------- Burger Menu -------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background: #41729f;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 4rem 0 6rem;
+  padding-bottom: 10rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+  padding-left: 6rem;
+  margin-top: 20rem;
+}
+
+.about-title .who {
+  font-family: "Hourglass of Shine";
+  color: #0f3c65;
+  font-size: 4rem;
+}
+
+.about-title .mia {
+  font-family: "impact";
+  font-size: 6rem;
+  color: #41729f;
+  margin-left: 6rem;
+  margin-top: -4rem;
+}
+
+.about-left p {
+  font-family: "Quicksand Regular";
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+.about-text-short {
+  width: 110%;
+}
+
+.about-text-medium {
+  width: 140%;
+}
+
+.about-text-long {
+  width: 200%;
+}
+
+.about-left strong {
+  font-family: "Quicksand Bold";
+}
+
+.about-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -28rem;
+}
+
+.about-img {
+  max-width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 0;
+}
+
+.star6 {
+  top: 35%;
+  left: 12%;
+  width: 75px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out;
+}
+.star7 {
+  top: 8%;
+  left: 54%;
+  width: 75px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out 1s;
+}
+
+.star8 {
+  bottom: -8%;
+  left: 41%;
+  width: 75px;
+  height: auto;
+  animation: blinkStar 4s infinite ease-in-out;
+}
+
+/* Basis reveal (skjult) */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Retninger */
+
+/* Nedefra */
+.reveal-up {
+  transform: translateY(40px);
+}
+
+/* Fra venstre */
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+/* Fra højre */
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.skills {
+  padding: 6rem 2rem;
+  text-align: center;
+  padding-bottom: 20rem;
+}
+
+/* Titel */
+.skills-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skills-title h2 {
+  font-family: "Hourglass of Shine";
+  font-size: 2.5rem;
+  color: #0f3c65;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s;
+}
+
+.skills-title .line {
+  height: 2px;
+  background: #41729f;
+  width: 0;
+  transition: width 0.6s ease;
+}
+
+.skills-title.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-title.reveal .line {
+  width: clamp(80px, 30vw, 400px);
+  transition-delay: 0.2s;
+}
+
+.skills-title.reveal h2 {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+/* Ikoner */
+.skills-icons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skills-icons img {
+  width: 100px;
+  height: auto;
+}
+
+/* Basis (skjult) */
+.icon {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Fra venstre */
+.icon-left {
+  transform: translateX(-150px);
+}
+
+/* Fra højre */
+.icon-right {
+  transform: translateX(150px);
+}
+
+/* Når de er synlige */
+.icon.reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger kun på reveal */
+.skills-icons .icon:nth-child(1).reveal {
+  transition-delay: 0.1s;
+}
+.skills-icons .icon:nth-child(2).reveal {
+  transition-delay: 0.2s;
+}
+.skills-icons .icon:nth-child(3).reveal {
+  transition-delay: 0.3s;
+}
+.skills-icons .icon:nth-child(4).reveal {
+  transition-delay: 0.4s;
+}
+.skills-icons .icon:nth-child(5).reveal {
+  transition-delay: 0.5s;
+}
+.skills-icons .icon:nth-child(6).reveal {
+  transition-delay: 0.6s;
+}
+.skills-icons .icon:nth-child(7).reveal {
+  transition-delay: 0.7s;
+}
+.skills-icons .icon:nth-child(8).reveal {
+  transition-delay: 0.8s;
+}
+
+/* Hover – hurtig og uden delay */
+.icon.reveal:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease !important; /* overskriv delays */
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+  .skills-icons {
+    gap: 2rem;
+  }
+
+  .skills-icons img {
+    width: 60px;
+  }
+}
+
+/* -------- Responsive -------- */
+
+/* Desktop */
+@media (min-width: 769px) {
+  .nav-center {
+    position: static;
+  }
+  .nav-center ul {
+    display: flex;
+    gap: 3rem;
+  }
+  .burger {
+    display: none;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    margin: 0;
+    z-index: 2;
+  }
+
+  .hero-right {
+    margin: 0;
+    margin-top: 2rem;
+    z-index: 1;
+  }
+
+  .hero-right img {
+    max-width: 80%;
+  }
+
+  .star {
+    width: 40px;
+  }
+}
+
+/* Mobiler */
+@media (max-width: 768px) {
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #edeee8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-center ul {
+    flex-direction: column;
+    gap: 2rem;
+    display: none;
+  }
+
+  .nav-center.open {
+    right: 0;
+  }
+
+  .nav-center.open ul {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .social-media-icons {
+    display: none;
+  }
+
+  .portfolio {
+    font-size: clamp(3rem, 10vw, 6rem);
+  }
+
+  .hero-right img {
+    max-width: 20rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .star3,
+  .star4,
+  .star5 {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .about-title {
+    padding-left: 0;
+    margin-top: 4rem;
+  }
+
+  .about-title .mia {
+    margin-left: 0;
+    margin-top: 0;
+    display: block;
+  }
+
+  .about-right {
+    margin-top: 2rem;
+  }
+
+  .star6,
+  .star7,
+  .star8 {
+    width: 2.5rem;
+  }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  .about-title .who {
+    font-size: 2rem;
+  }
+
+  .about-title .mia {
+    font-size: 3rem;
+  }
+
+  .about-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-right {
+    margin-top: 1rem;
+  }
+
+  .star6,
+  .star7,
+  .star8 {
+    display: none; /* skjul stjerner hvis de roder for meget på små skærme */
+  }
+}

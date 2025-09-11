@@ -22,7 +22,7 @@ export default function About() {
         }`}
       >
         <h1 className="who">Hvem er</h1>
-        <h2 className="mia">Mia?</h2>
+        <h2 className="mia">MIA?</h2>
       </div>
 
       <section className="about">

@@ -36,6 +36,10 @@ body {
 /* -------- Header -------- */
 header {
   padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #edeee8;
 }
 
 .header-container {
@@ -63,9 +67,14 @@ header {
   color: #41729f;
 }
 
+.social-media-icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .social-media-icons img {
   height: 33px;
-  margin-left: 30px;
 }
 
 /* -------- Hero -------- */
@@ -357,17 +366,17 @@ header {
 
 /* Nedefra */
 .reveal-up {
-  transform: translateY(40px);
+  transform: translateY(80px);
 }
 
 /* Fra venstre */
 .reveal-left {
-  transform: translateX(-60px);
+  transform: translateX(-80px);
 }
 
 /* Fra højre */
 .reveal-right {
-  transform: translateX(60px);
+  transform: translateX(80px);
 }
 
 .skills {
@@ -439,12 +448,12 @@ header {
 
 /* Fra venstre */
 .icon-left {
-  transform: translateX(-150px);
+  transform: translateX(-130px);
 }
 
 /* Fra højre */
 .icon-right {
-  transform: translateX(150px);
+  transform: translateX(130px);
 }
 
 /* Når de er synlige */
@@ -483,6 +492,115 @@ header {
 .icon.reveal:hover {
   transform: scale(1.2);
   transition: transform 0.2s ease !important; /* overskriv delays */
+}
+
+.projects {
+  padding: 6rem 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+}
+
+/* Grid til projekterne */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+/* Projektkort */
+.project {
+  max-width: 80%;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(200px); /* starter ude til højre */
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project.reveal-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project img {
+  width: 80%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project:nth-child(2) img {
+  width: 100%; /* midterbilledet større */
+}
+
+.project:nth-child(1) img {
+  margin-top: 1.5rem; /* midterbilledet større */
+}
+
+.project:nth-child(3) img {
+  margin-top: 1.5rem; /* midterbilledet større */
+}
+
+.project img:hover {
+  transform: scale(1.05);
+}
+
+.project p {
+  margin-top: 1rem;
+  font-family: "Quicksand SemiBold";
+  color: #0f3c65;
+  font-size: 1.5rem;
+}
+
+/* Overskrift nederst */
+.projects-title {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  text-align: left;
+  margin-left: 4rem;
+}
+
+.projects-title.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.projects-title h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: "impact";
+  color: #41729f;
+  margin: 0;
+}
+
+.projects-title .mine {
+  font-family: "Hourglass of Shine";
+  color: #0f3c65;
+  font-size: 4rem;
+}
+
+.projects-title .projekter {
+  font-family: "impact";
+  font-size: 6rem;
+  color: #41729f;
+  margin-left: 6rem;
+  margin-top: -4rem;
+}
+
+.star9 {
+  top: 28%;
+  left: 10%;
+  width: 75px;
+  height: auto;
+}
+.star10 {
+  top: 15%;
+  left: 36%;
+  width: 75px;
+  height: auto;
 }
 
 /* Responsiv */

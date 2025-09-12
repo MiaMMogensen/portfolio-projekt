@@ -12,17 +12,16 @@ export default function Hero() {
         <p className="subtitle">
           Kreativ frontend-udvikler med passion for programmering
         </p>
+        <img src={starBig} alt="stjerne" className="star star3" />
       </div>
 
       <div className="hero-right">
         <img src={forsideImg} alt="Mia Mogensen" />
+        <img src={starBig} alt="stjerne" className="star star4" />
+        <img src={starBig} alt="stjerne" className="star star5" />
       </div>
-
       <img src={starBig} alt="stjerne" className="star star1" />
       <img src={starBig} alt="stjerne" className="star star2" />
-      <img src={starBig} alt="stjerne" className="star star3" />
-      <img src={starBig} alt="stjerne" className="star star4" />
-      <img src={starBig} alt="stjerne" className="star star5" />
     </section>
   );
 }

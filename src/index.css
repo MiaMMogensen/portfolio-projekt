@@ -6,6 +6,7 @@ body {
   padding: 0;
   background-color: #edeee8;
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 a {
@@ -60,10 +61,18 @@ header {
   height: 70px;
 }
 
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-center ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-center a {
@@ -744,11 +753,16 @@ body.menu-open {
 
 .star9.active,
 .star10.active {
+  opacity: 1;
+  transform: translateX(0);
+  /* Start blink først når slide-in (1.5s) er færdig */
   animation: blinkStar 3s infinite ease-in-out;
+  animation-delay: 1.5s;
 }
 
+/* Vil du stadig have forskudt blink på star10? Læg ekstra delay på */
 .star10.active {
-  animation-delay: 0.8s;
+  animation-delay: 2.3s; /* 1.5s slide + 0.8s forskydning */
 }
 
 .contact {

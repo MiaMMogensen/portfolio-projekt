@@ -1,3 +1,4 @@
+// components/ScrollToTop.jsx
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
@@ -5,11 +6,11 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Hvis vi er på en projektside
-    if (pathname.startsWith("/projects")) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-      // "auto" så den hopper direkte til top, uden smooth scroll
-    }
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500); // matcher din transition.duration i ProjectDetail (0.6s)
+
+    return () => clearTimeout(timeout);
   }, [pathname]);
 
   return null;

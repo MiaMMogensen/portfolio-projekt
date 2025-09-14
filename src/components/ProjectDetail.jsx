@@ -1,4 +1,6 @@
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import Header from "../components/Header";
 import projects from "../assets/data/projects.json";
 import githubIcon from "/img/github.png";
@@ -34,76 +36,84 @@ export default function ProjectDetail() {
     <>
       <Header />
 
-      <div className="project-title">
-        <h1>PROJEKT</h1>
-        <h2>{projectIndex + 1}</h2>
-        <img src={starBig} alt="stjerne" className="star star13" />
-        <img src={starBig} alt="stjerne" className="star star14" />
-      </div>
-
-      <section className={`project-page ${project.id}`}>
-        <div className="project-left">
-          <h3>{project.name}</h3>
-          {project.p1 && <p>{formatText(project.p1)}</p>}
-          {project.p2 && <p>{formatText(project.p2)}</p>}
-          {project.p3 && <p>{formatText(project.p3)}</p>}
-          {project.p5 && <p>{formatText(project.p5)}</p>}
-          {project.teknologier && (
-            <p className="teknologier">{formatText(project.teknologier)}</p>
-          )}
+      <motion.div
+        className="project-wrapper"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -40 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        <div className="project-title">
+          <h1>PROJEKT</h1>
+          <h2>{projectIndex + 1}</h2>
+          <img src={starBig} alt="stjerne" className="star star13" />
+          <img src={starBig} alt="stjerne" className="star star14" />
         </div>
 
-        <div className="project-right">
-          <img src={project.image} alt={project.name} />
-          {project.image2 && (
-            <img src={project.image2} alt={`${project.name} ekstra`} />
-          )}
-        </div>
-      </section>
+        <section className={`project-page ${project.id}`}>
+          <div className="project-left">
+            <h3>{project.name}</h3>
+            {project.p1 && <p>{formatText(project.p1)}</p>}
+            {project.p2 && <p>{formatText(project.p2)}</p>}
+            {project.p3 && <p>{formatText(project.p3)}</p>}
+            {project.p5 && <p>{formatText(project.p5)}</p>}
+            {project.teknologier && (
+              <p className="teknologier">{formatText(project.teknologier)}</p>
+            )}
+          </div>
 
-      {/* Specifikke ekstra-sektioner kun for nogle projekter */}
-      {project.brochure && (
-        <div className="brandmateriale">
-          <img src={project.brochure} alt="brochure" />
-          <img src={project.tshirt} alt="tshirt" />
-          <img src={project.visitkort} alt="visitkort" />
-        </div>
-      )}
+          <div className="project-right">
+            <img src={project.image} alt={project.name} />
+            {project.image2 && (
+              <img src={project.image2} alt={`${project.name} ekstra`} />
+            )}
+          </div>
+        </section>
 
-      {project.p4 && (
-        <div className="project-p4">
-          <p>{formatText(project.p4)}</p>
-        </div>
-      )}
-
-      <div className="project-links">
-        {project.codelink && (
-          <a href={project.codelink} target="_blank" rel="noreferrer">
-            <img src={githubIcon} alt="GitHub" className="link-icon" />
-            Se koden
-          </a>
+        {/* Specifikke ekstra-sektioner kun for nogle projekter */}
+        {project.brochure && (
+          <div className="brandmateriale">
+            <img src={project.brochure} alt="brochure" />
+            <img src={project.tshirt} alt="tshirt" />
+            <img src={project.visitkort} alt="visitkort" />
+          </div>
         )}
 
-        {project.projectlink && (
-          <a href={project.projectlink} target="_blank" rel="noreferrer">
-            <img src={starBig} alt="star" className="link-icon" />
-            Se produktet
-          </a>
+        {project.p4 && (
+          <div className="project-p4">
+            <p>{formatText(project.p4)}</p>
+          </div>
         )}
-      </div>
 
-      <div className="next-prev-links">
-        <div className="prev">
-          {prevProject && (
-            <a href={`/projects/${prevProject.id}`}>← Forrige projekt</a>
+        <div className="project-links">
+          {project.codelink && (
+            <a href={project.codelink} target="_blank" rel="noreferrer">
+              <img src={githubIcon} alt="GitHub" className="link-icon" />
+              Se koden
+            </a>
+          )}
+
+          {project.projectlink && (
+            <a href={project.projectlink} target="_blank" rel="noreferrer">
+              <img src={starBig} alt="star" className="link-icon" />
+              Se produktet
+            </a>
           )}
         </div>
-        <div className="next">
-          {nextProject && (
-            <a href={`/projects/${nextProject.id}`}>Næste projekt →</a>
-          )}
+
+        <div className="next-prev-links">
+          <div className="prev">
+            {prevProject && (
+              <Link to={`/projects/${prevProject.id}`}>← Forrige projekt</Link>
+            )}
+          </div>
+          <div className="next">
+            {nextProject && (
+              <Link to={`/projects/${nextProject.id}`}>Næste projekt →</Link>
+            )}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/img/logo.png";
-import { NavLink } from "react-router";
-import mail from "../assets/img/mail.png";
-import github from "../assets/img/github.png";
-import linkedin from "../assets/img/linkedin.png";
+import logo from "/img/logo.png";
+import mail from "/img/mail.png";
+import github from "/img/github.png";
+import linkedin from "/img/linkedin.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,19 +19,21 @@ export default function Header() {
     <header>
       <div className="header-container">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <a href="#home">
+            <img src={logo} alt="logo" />
+          </a>
         </div>
 
         <nav className="nav-center">
           <ul>
             <li>
-              <NavLink to="/about">Om mig</NavLink>
+              <a href="#about">Om mig</a>
             </li>
             <li>
-              <NavLink to="/projects">Projekter</NavLink>
+              <a href="#projects">Projekter</a>
             </li>
             <li>
-              <NavLink to="/contact">Kontakt</NavLink>
+              <a href="#contact">Kontakt</a>
             </li>
           </ul>
         </nav>
@@ -56,19 +57,19 @@ export default function Header() {
       <nav className={`nav-overlay ${menuOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
               Om mig
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/projects" onClick={() => setMenuOpen(false)}>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
               Projekter
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
               Kontakt
-            </NavLink>
+            </a>
           </li>
         </ul>
       </nav>

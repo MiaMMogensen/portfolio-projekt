@@ -1,5 +1,5 @@
-import aboutImg from "../assets/img/about-img.png";
-import starBig from "../assets/img/star-big.png";
+import aboutImg from "/img/about-img.png";
+import starBig from "/img/star-big.png";
 import useReveal from "../hooks/useReveal";
 
 export default function About() {
@@ -16,6 +16,7 @@ export default function About() {
   return (
     <>
       <div
+        id="about"
         ref={titleRef}
         className={`about-title reveal reveal-left ${
           titleActive ? "active" : ""
@@ -83,32 +84,34 @@ export default function About() {
             imgActive ? "active" : ""
           }`}
         >
-          <img src={aboutImg} alt="Mia Mogensen" className="about-img" />
+          <div className="about-img-wrapper">
+            <img src={aboutImg} alt="Mia Mogensen" className="about-img" />
 
-          <img
-            ref={star1Ref}
-            src={starBig}
-            alt="stjerne"
-            className={`star star6 reveal reveal-right ${
-              star1Active ? "active" : ""
-            }`}
-          />
-          <img
-            ref={star2Ref}
-            src={starBig}
-            alt="stjerne"
-            className={`star star7 reveal reveal-right ${
-              star2Active ? "active" : ""
-            }`}
-          />
-          <img
-            ref={star3Ref}
-            src={starBig}
-            alt="stjerne"
-            className={`star star8 reveal reveal-right ${
-              star3Active ? "active" : ""
-            }`}
-          />
+            <img
+              ref={star1Ref}
+              src={starBig}
+              alt="stjerne"
+              className={`star star6 reveal reveal-right ${
+                star1Active ? "active" : ""
+              }`}
+            />
+            <img
+              ref={star2Ref}
+              src={starBig}
+              alt="stjerne"
+              className={`star star7 reveal reveal-right ${
+                star2Active ? "active" : ""
+              }`}
+            />
+            <img
+              ref={star3Ref}
+              src={starBig}
+              alt="stjerne"
+              className={`star star8 reveal reveal-right ${
+                star3Active ? "active" : ""
+              }`}
+            />
+          </div>
         </div>
       </section>
     </>

@@ -1,11 +1,11 @@
-import html from "../assets/img/html.png";
-import css from "../assets/img/css.png";
-import js from "../assets/img/js.png";
-import react from "../assets/img/react.png";
-import vscode from "../assets/img/vscode.png";
-import github from "../assets/img/github-sort.png";
-import figma from "../assets/img/figma.png";
-import photoshop from "../assets/img/photoshop.png";
+import html from "/img/html.png";
+import css from "/img/css.png";
+import js from "/img/js.png";
+import react from "/img/react.png";
+import vscode from "/img/vscode.png";
+import github from "/img/github-sort.png";
+import figma from "/img/figma.png";
+import photoshop from "/img/photoshop.png";
 import useReveal from "../hooks/useReveal";
 
 export default function Skills() {

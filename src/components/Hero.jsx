@@ -1,9 +1,9 @@
-import forsideImg from "../assets/img/forside-img.png";
-import starBig from "../assets/img/star-big.png";
+import forsideImg from "/img/forside-img.png";
+import starBig from "/img/star-big.png";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <div className="hero-left">
         <h1 className="title">
           <span className="name">Mia Mogensen</span>

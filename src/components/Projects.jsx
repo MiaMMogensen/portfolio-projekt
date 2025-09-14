@@ -1,8 +1,9 @@
 import useReveal from "../hooks/useReveal";
-import rejseImg from "../assets/img/rejsedagbog-projekt.png";
-import zeroImg from "../assets/img/zero-projekt.png";
-import radarImg from "../assets/img/radar-projekt.png";
-import starBig from "../assets/img/star-big.png";
+import rejseImg from "/img/rejsedagbog-projekt.png";
+import zeroImg from "/img/zero-projekt.png";
+import radarImg from "/img/radar-projekt.png";
+import starBig from "/img/star-big.png";
+import { Link } from "react-router";
 
 export default function Projects() {
   const [titleRef, titleVisible] = useReveal();
@@ -13,12 +14,31 @@ export default function Projects() {
   const [star10Ref, star10Active] = useReveal();
 
   return (
-    <section className="projects">
-      <div
-        ref={titleRef}
-        className={`projects-title ${titleVisible ? "show" : ""}`}
-      >
-        <h1 className="mine">Mine</h1> <h2 className="projekter">PROJEKTER</h2>
+    <section id="projects" className="projects">
+      <div className="projects-title-wrapper">
+        <div
+          ref={titleRef}
+          className={`projects-title ${titleVisible ? "show" : ""}`}
+        >
+          <h1 className="mine">Mine</h1>{" "}
+          <h2 className="projekter">PROJEKTER</h2>
+        </div>
+        <img
+          ref={star9Ref}
+          src={starBig}
+          alt="stjerne"
+          className={`star star9 reveal reveal-left ${
+            star9Active ? "active" : ""
+          }`}
+        />
+        <img
+          ref={star10Ref}
+          src={starBig}
+          alt="stjerne"
+          className={`star star10 reveal reveal-left ${
+            star10Active ? "active" : ""
+          }`}
+        />
       </div>
 
       <div className="projects-grid">
@@ -26,42 +46,32 @@ export default function Projects() {
           ref={project1Ref}
           className={`project ${project1Visible ? "reveal-right" : ""}`}
         >
-          <img src={rejseImg} alt="Rejsedagbog" />
-          <p>Rejsedagbog</p>
+          <Link to="/projects/rejsedagbog">
+            <img src={rejseImg} alt="Rejsedagbog" />
+            <p>Rejsedagbog</p>
+          </Link>
         </div>
 
         <div
           ref={project2Ref}
           className={`project ${project2Visible ? "reveal-right" : ""}`}
         >
-          <img src={zeroImg} alt="Zero Buzz Brew" />
-          <p>Zero Buzz Brew</p>
+          <Link to="/projects/zerobuzzbrew">
+            <img src={zeroImg} alt="Zero Buzz Brew" />
+            <p>Zero Buzz Brew</p>
+          </Link>
         </div>
 
         <div
           ref={project3Ref}
           className={`project ${project3Visible ? "reveal-right" : ""}`}
         >
-          <img src={radarImg} alt="Radar" />
-          <p>Radar</p>
+          <Link to="/projects/radar">
+            <img src={radarImg} alt="Radar" />
+            <p>Radar</p>
+          </Link>
         </div>
       </div>
-      <img
-        ref={star9Ref}
-        src={starBig}
-        alt="stjerne"
-        className={`star star9 reveal reveal-left ${
-          star9Active ? "active" : ""
-        }`}
-      />
-      <img
-        ref={star10Ref}
-        src={starBig}
-        alt="stjerne"
-        className={`star star10 reveal reveal-left ${
-          star10Active ? "active" : ""
-        }`}
-      />
     </section>
   );
 }

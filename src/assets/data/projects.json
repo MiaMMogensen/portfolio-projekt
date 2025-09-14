@@ -1,0 +1,27 @@
+[
+  {
+    "id": "rejsedagbog",
+    "name": "Min egen rejse dagbog",
+    "p1": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i **React** uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende.",
+    "p2": "Jeg arbejdede med **komponentbaseret udvikling, dynamisk rendering og datahåndtering**, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
+    "projectlink": "",
+    "image": "/img/projekt1.png",
+    "codelink": ""
+  },
+  {
+    "id": "zerobuzzbrew",
+    "name": "Zero Buzz Brew",
+    "body": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i React uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende. Jeg arbejdede med komponentbaseret udvikling, dynamisk rendering og datahåndtering, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
+    "projectlink": "",
+    "image": "",
+    "codelink": ""
+  },
+  {
+    "id": "radar",
+    "name": "Radar",
+    "body": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i React uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende. Jeg arbejdede med komponentbaseret udvikling, dynamisk rendering og datahåndtering, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
+    "projectlink": "",
+    "image": "",
+    "codelink": ""
+  }
+]

@@ -1,12 +1,21 @@
-import forsideimg from "../assets/img/forside-img.png";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <div className="forside">
-        <img className="my-img" src={forsideimg} alt="mit navn" />
-      </div>
-      <p>Multimediedesigner | Frontend-udvikler</p>
-    </main>
+    <>
+      <Header />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+    </>
   );
 }

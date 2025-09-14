@@ -4,9 +4,10 @@
     "name": "Min egen rejse dagbog",
     "p1": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i **React** uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende.",
     "p2": "Jeg arbejdede med **komponentbaseret udvikling, dynamisk rendering og datahåndtering**, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
-    "projectlink": "",
+    "projectlink": "https://miammogensen.github.io/rejsedagbog/",
     "image": "/img/projekt1.png",
-    "codelink": ""
+    "codelink": "https://github.com/MiaMMogensen/rejsedagbog.git",
+    "teknologier": "**Brugte teknologier:** React, JavaScript, CSS"
   },
   {
     "id": "zerobuzzbrew",

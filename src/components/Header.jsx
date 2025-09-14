@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 import logo from "/img/logo.png";
 import mail from "/img/mail.png";
 import github from "/img/github.png";
@@ -19,21 +20,27 @@ export default function Header() {
     <header>
       <div className="header-container">
         <div className="logo">
-          <a href="#home">
+          <Link to="/" state={{ section: "home" }}>
             <img src={logo} alt="logo" />
-          </a>
+          </Link>
         </div>
 
         <nav className="nav-center">
           <ul>
             <li>
-              <a href="#about">Om mig</a>
+              <Link to="/" state={{ section: "about" }}>
+                Om mig
+              </Link>
             </li>
             <li>
-              <a href="#projects">Projekter</a>
+              <Link to="/" state={{ section: "projects" }}>
+                Projekter
+              </Link>
             </li>
             <li>
-              <a href="#contact">Kontakt</a>
+              <Link to="/" state={{ section: "contact" }}>
+                Kontakt
+              </Link>
             </li>
           </ul>
         </nav>
@@ -57,19 +64,31 @@ export default function Header() {
       <nav className={`nav-overlay ${menuOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
+            <Link
+              to="/"
+              state={{ section: "about" }}
+              onClick={() => setMenuOpen(false)}
+            >
               Om mig
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
+            <Link
+              to="/"
+              state={{ section: "projects" }}
+              onClick={() => setMenuOpen(false)}
+            >
               Projekter
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
+            <Link
+              to="/"
+              state={{ section: "contact" }}
+              onClick={() => setMenuOpen(false)}
+            >
               Kontakt
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

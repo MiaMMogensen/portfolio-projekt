@@ -915,27 +915,57 @@ footer p {
   width: 100%;
 }
 
+.teknologier {
+  margin-top: 4rem;
+}
+
 /* Links til GitHub / live projekt */
 .project-links {
-  margin-top: 2rem;
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 4rem 0 0 8rem;
 }
 
 .project-links a {
-  font-family: "Quicksand SemiBold";
-  font-size: 1.1rem;
+  font-family: "Quicksand Regular";
+  font-size: 1.3rem;
   color: #41729f;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   transition: transform 0.2s ease, color 0.2s ease;
+  gap: 1rem;
 }
 
 .project-links a:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   color: #0f3c65;
+}
+.project-links .link-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.next-prev-links {
+  display: flex;
+  justify-content: flex-end; /* højre side */
+  gap: 2rem;
+  padding: 0 8rem 4rem 0;
+}
+
+.next-prev-links a {
+  font-family: "Quicksand SemiBold";
+  font-size: 1.1rem;
+  color: #41729f;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.next-prev-links a:hover {
+  color: #0f3c65;
+  text-decoration: underline;
 }
 
 .project-title {

@@ -869,10 +869,25 @@ footer p {
 
 /* Projektsider */
 
-.project-page {
+.project-page,
+.project-p4 {
   display: flex;
   justify-content: space-between;
   padding: 0 8rem;
+}
+
+.brandmateriale {
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+  gap: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandmateriale img {
+  width: 100%;
+  max-width: 400px;
 }
 
 /* Venstre side (tekst) */
@@ -887,7 +902,8 @@ footer p {
   margin-bottom: 1.5rem;
 }
 
-.project-left p {
+.project-left p,
+.project-p4 {
   margin-bottom: 1.2rem;
   font-family: "Quicksand Regular";
   font-size: 1.3rem;
@@ -896,7 +912,8 @@ footer p {
   hyphens: auto;
 }
 
-.project-left strong {
+.project-left strong,
+.project-p4 strong {
   font-family: "Quicksand Bold";
   color: #41729f;
 }
@@ -908,11 +925,38 @@ footer p {
   justify-content: center;
   align-items: center;
   margin-top: -8rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-right img:nth-child(2) {
+  margin-top: 10rem; /* ekstra afstand fra det første */
+  width: 50%;
+}
+
+.project-page.zerobuzzbrew .project-right {
+  margin-top: -2rem; /* eller hvad du vil have */
+}
+
+.project-page.zerobuzzbrew.project-page {
+  padding-right: 1rem;
 }
 
 .project-right img {
   max-width: 350px;
   width: 100%;
+}
+
+.project-page.zerobuzzbrew .project-right img {
+  max-width: 650px;
+}
+
+.project-page.radar .project-right {
+  margin-top: -12rem;
+}
+
+.project-page.radar .project-right img {
+  max-width: 800px;
 }
 
 .teknologier {
@@ -950,14 +994,23 @@ footer p {
 
 .next-prev-links {
   display: flex;
-  justify-content: flex-end; /* højre side */
+  justify-content: space-between; /* højre side */
   gap: 2rem;
-  padding: 0 8rem 4rem 0;
+  padding: 6rem 0 4rem 0;
+}
+.next-prev-links .prev {
+  text-align: left;
+  padding-left: 8rem;
+}
+
+.next-prev-links .next {
+  text-align: right;
+  padding-right: 8rem;
 }
 
 .next-prev-links a {
-  font-family: "Quicksand SemiBold";
-  font-size: 1.1rem;
+  font-family: "Quicksand Regular";
+  font-size: 1.3rem;
   color: #41729f;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -971,6 +1024,7 @@ footer p {
 .project-title {
   text-align: start;
   padding: 0 8rem;
+  position: relative;
 }
 
 .project-title h1 {
@@ -986,6 +1040,22 @@ footer p {
   font-size: 6rem;
   margin-top: -6rem;
   margin-left: 24rem;
+}
+
+.star13 {
+  position: absolute;
+  top: 65%;
+  left: 3.5%;
+  width: 85px;
+  animation: blinkStar 3s infinite ease-in-out;
+}
+
+.star14 {
+  position: absolute;
+  top: -40%;
+  left: 29%;
+  width: 85px;
+  animation: blinkStar 4s infinite ease-in-out 1s;
 }
 
 /* -------- Responsive -------- */

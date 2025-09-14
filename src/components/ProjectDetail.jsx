@@ -1,9 +1,11 @@
+import { useParams } from "react-router";
 import Header from "../components/Header";
 import projects from "../assets/data/projects.json";
 import githubIcon from "/img/github.png";
 import starBig from "/img/star-big.png";
 
 function formatText(text) {
+  if (!text) return null;
   return text
     .split(/(\*\*.*?\*\*)/g)
     .map((part, i) =>
@@ -15,9 +17,14 @@ function formatText(text) {
     );
 }
 
-export default function Project1() {
-  const projectIndex = projects.findIndex((p) => p.id === "rejsedagbog");
+export default function ProjectDetail() {
+  const { id } = useParams(); // f.eks. "rejsedagbog"
+  const projectIndex = projects.findIndex((p) => p.id === id);
   const project = projects[projectIndex];
+
+  if (!project) {
+    return <p>Projektet blev ikke fundet</p>;
+  }
 
   const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
   const nextProject =
@@ -34,18 +41,40 @@ export default function Project1() {
         <img src={starBig} alt="stjerne" className="star star14" />
       </div>
 
-      <section className="project-page">
+      <section className={`project-page ${project.id}`}>
         <div className="project-left">
           <h3>{project.name}</h3>
-          <p>{formatText(project.p1)}</p>
-          <p>{formatText(project.p2)}</p>
-          <p className="teknologier">{formatText(project.teknologier)}</p>
+          {project.p1 && <p>{formatText(project.p1)}</p>}
+          {project.p2 && <p>{formatText(project.p2)}</p>}
+          {project.p3 && <p>{formatText(project.p3)}</p>}
+          {project.p5 && <p>{formatText(project.p5)}</p>}
+          {project.teknologier && (
+            <p className="teknologier">{formatText(project.teknologier)}</p>
+          )}
         </div>
 
         <div className="project-right">
           <img src={project.image} alt={project.name} />
+          {project.image2 && (
+            <img src={project.image2} alt={`${project.name} ekstra`} />
+          )}
         </div>
       </section>
+
+      {/* Specifikke ekstra-sektioner kun for nogle projekter */}
+      {project.brochure && (
+        <div className="brandmateriale">
+          <img src={project.brochure} alt="brochure" />
+          <img src={project.tshirt} alt="tshirt" />
+          <img src={project.visitkort} alt="visitkort" />
+        </div>
+      )}
+
+      {project.p4 && (
+        <div className="project-p4">
+          <p>{formatText(project.p4)}</p>
+        </div>
+      )}
 
       <div className="project-links">
         {project.codelink && (

@@ -12,17 +12,28 @@
   {
     "id": "zerobuzzbrew",
     "name": "Zero Buzz Brew",
-    "body": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i React uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende. Jeg arbejdede med komponentbaseret udvikling, dynamisk rendering og datahåndtering, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
-    "projectlink": "",
-    "image": "",
-    "codelink": ""
+    "p1": "Hvordan designer og udvikler man en digital platform for et mikrobryggeri, der øger accepten af alkoholfri øl blandt unge voksne?",
+    "p2": "Det var opgaven i dette projekt: at skabe en **digital platform** for Zero Buzz Brew, med fokus på at gøre alkoholfri øl mere attraktivt for unge.",
+    "p3": "Min primære opgave var at **programmere hjemmesiden med HTML, CSS og JavaScript** og sikre, at den matchede unges forventninger til en moderne digital oplevelse.",
+    "p4": "Derudover bidrog jeg til det grafiske design, ved at skabe merchandise, visitkort og andre brandmaterialer i **Photoshop**, som understøttede Zero Buzz Brews samlede udtryk.",
+    "projectlink": "https://ux-ui.designsbymia.dk",
+    "image": "/img/projekt2.png",
+    "codelink": "https://github.com/MiaMMogensen/UX-UI-projekt/tree/main",
+    "brochure": "/img/brochure.png",
+    "tshirt": "/img/tshirt.png",
+    "visitkort": "/img/visitkort.png"
   },
   {
     "id": "radar",
     "name": "Radar",
-    "body": "Dette projekt er min personlige rejsedagbog, hvor jeg kan gemme minder fra mine rejser og løbende opdatere med nye oplevelser. Det er et af mine første projekter i React uden for studiet og en vigtig del af min proces med at lære teknologien bedre at kende. Jeg arbejdede med komponentbaseret udvikling, dynamisk rendering og datahåndtering, hvilket gav mig et solidt fundament og en god start på min rejse ind i React-verdenen.",
-    "projectlink": "",
-    "image": "",
-    "codelink": ""
+    "p1": "Hvordan kan et spillested engagere sit publikum gennem digitale og interaktive løsninger?",
+    "p2": "Opgaven i dette projekt var at **udvikle** en **digital platform** for Radar, et aarhusiansk spillested, der ønskede at styrke brugerinvolvering og samle støtte fra publikum.",
+    "p3": "Min opgave var at **designe og udvikle** hjemmesiden med fokus på **interaktivitet, responsivitet og brugergenereret indhold**. Jeg skabte en **visuel identitet**, der afspejler Radars kreative univers, med energiske farver og moderne typografi.",
+    "p5": "Resultatet blev en **responsiv** platform, hvor brugerne kan interagere, dele oplevelser og engagere sig i spillestedets univers. Hjemmesiden kombinerer en ungdommelig og energisk visuel identitet med funktioner som konkurrencer, frivillighed og brugergenereret indhold, der gør det nemt at støtte og følge Radar.",
+    "teknologier": "**Brugte teknologier:** HTML, CSS, JavaScript, Figma, Photoshop",
+    "projectlink": "https://radar-projekt.designsbymia.dk",
+    "image": "/img/projekt3.png",
+    "image2": "/img/radar-projekt.png",
+    "codelink": "https://github.com/MiaMMogensen/Eksamens-projekt-1.semester"
   }
 ]

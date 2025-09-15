@@ -46,9 +46,28 @@ export default function Header() {
         </nav>
 
         <div className="social-media-icons">
-          <img src={mail} alt="mail icon" />
-          <img src={github} alt="github icon" />
-          <img src={linkedin} alt="linkedin icon" />
+          {/* Mail – åbner brugerens mailprogram */}
+          <a href="mailto:miamogensen2@gmail.com">
+            <img src={mail} alt="mail icon" />
+          </a>
+
+          {/* GitHub – åbner i ny fane */}
+          <a
+            href="https://github.com/MiaMMogensen"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={github} alt="github icon" />
+          </a>
+
+          {/* LinkedIn – åbner i ny fane */}
+          <a
+            href="https://www.linkedin.com/in/mia-mogensen-5815b4325/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={linkedin} alt="linkedin icon" />
+          </a>
         </div>
 
         <div

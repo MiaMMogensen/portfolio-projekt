@@ -30,13 +30,27 @@ export default function Contact() {
           className={`contact-info reveal-up ${infoVisible ? "active" : ""}`}
         >
           <p>
-            <img src={mail} alt="Mail" /> miamogensen2@gmail.com
+            <a href="mailto:miamogensen2@gmail.com">
+              <img src={mail} alt="Mail" /> miamogensen2@gmail.com
+            </a>
           </p>
           <p>
-            <img src={github} alt="GitHub" /> MiaMMogensen
+            <a
+              href="https://github.com/MiaMMogensen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github} alt="GitHub" /> MiaMMogensen
+            </a>
           </p>
           <p>
-            <img src={linkedin} alt="LinkedIn" /> Mia Mogensen
+            <a
+              href="https://www.linkedin.com/in/mia-mogensen-5815b4325/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="LinkedIn" /> Mia Mogensen
+            </a>
           </p>
         </div>
       </div>

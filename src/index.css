@@ -40,7 +40,9 @@ a {
   src: url("./assets/fonts/Hourglass of Shine.otf") format("opentype");
 }
 
-/* -------- Header -------- */
+/* ------------------------------------------------ */
+
+/* Header */
 header {
   padding: 15px 50px;
   position: sticky;
@@ -80,15 +82,8 @@ header {
   font-family: "Quicksand Regular";
   font-size: 1.5rem;
   color: #41729f;
-  display: inline-block; /* vigtigt for at scale virker på teksten */
+  display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.nav-center a:hover {
-  /* ny farve når man hover */
-  text-shadow: 0 0 8px #41729f; /* giver en "glow"-effekt */
-  transition: all 0.3s ease; /* gør overgangen blød */
-  transform: scale(1.05);
 }
 
 .social-media-icons {
@@ -97,188 +92,32 @@ header {
   gap: 30px;
 }
 
-/* Logo hover */
+.social-media-icons img {
+  height: 33px;
+}
+
+/* Hover effekter på headeren */
 .logo img:hover {
   filter: drop-shadow(0 0 8px #41729f); /* glow effekt */
   transform: scale(1.05); /* zoom lidt ind */
   transition: all 0.3s ease;
 }
 
-/* Sociale medier hover */
 .social-media-icons img:hover {
   filter: drop-shadow(0 0 6px #41729f); /* glow i mørkere blå */
   transform: scale(1.05); /* lidt større */
   transition: all 0.3s ease;
 }
 
-.social-media-icons img {
-  height: 33px;
+.nav-center a:hover {
+  text-shadow: 0 0 8px #41729f;
+  transition: all 0.3s ease;
+  transform: scale(1.05);
 }
 
-/* -------- Hero -------- */
-.hero {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 4rem;
-  position: relative;
-}
+/* ------------------------------------------------ */
 
-.hero-left {
-  position: relative;
-  margin-right: -10rem; /* overlap ind i billedet */
-  z-index: 2;
-  margin-top: 15rem;
-  display: inline-block;
-}
-
-.hero-right {
-  position: relative;
-  margin-left: -8rem; /* overlap ind i teksten */
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  display: inline-block;
-}
-
-.hero-right img {
-  width: 90%;
-  max-width: 42rem;
-  height: auto;
-  display: block;
-}
-
-.title {
-  margin: 0;
-  position: relative;
-  line-height: 1.1;
-}
-
-.title .name {
-  font-family: "Hourglass of Shine";
-  color: #0f3c65;
-  font-size: clamp(2rem, 4vw, 4.375rem);
-  position: relative;
-  z-index: 3;
-  display: block;
-  margin-bottom: -2.5rem;
-  margin-left: 3.5rem;
-}
-
-.portfolio {
-  font-size: clamp(4rem, 15vw, 16rem);
-  color: #41729f;
-  font-family: "impact";
-  line-height: 1;
-  position: relative;
-  z-index: 2; /* under navnet, men foran billedet */
-}
-
-.subtitle {
-  font-size: clamp(1rem, 2vw, 1.875rem);
-  color: #0f3c65;
-  font-family: "Quicksand Regular";
-  margin-top: 0.5rem;
-  position: relative;
-  z-index: 3;
-  margin-left: 5.5rem;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #0f3c65;
-  width: 0;
-  animation: typing 4s steps(55, end) forwards, blink 0.75s step-end 7 forwards;
-}
-
-/* Skrive animation */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 46ch; /* præcis længde på teksten */
-  }
-}
-
-/* Cursor blink */
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #0f3c65;
-  }
-}
-
-/* -------- Stjerner -------- */
-
-@keyframes blinkStar {
-  0%,
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  30%,
-  60% {
-    opacity: 0;
-    transform: scale(0.8);
-  } /* stjernen væk */
-  70%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.star {
-  position: absolute;
-  z-index: 4;
-}
-
-.star1 {
-  top: 5%;
-  left: 15%;
-  width: 110px;
-  height: auto;
-  animation: blinkStar 3s infinite ease-in-out;
-}
-
-.star2 {
-  top: 15%;
-  left: 20%;
-  width: 64px;
-  height: auto;
-  animation: blinkStar 3s infinite ease-in-out 1s;
-}
-.star3 {
-  top: 65%;
-  left: -5%;
-  width: 85px;
-  height: auto;
-  animation: blinkStar 1.5s infinite ease-in-out 0.5s;
-  position: absolute;
-}
-
-.hero-right .star4 {
-  top: 30%;
-  right: 91%;
-  width: 85px;
-  height: auto;
-  animation: blinkStar 4s infinite ease-in-out;
-  position: absolute;
-}
-
-.hero-right .star5 {
-  top: 20%;
-  right: 4%;
-  width: 85px;
-  height: auto;
-  animation: blinkStar 2.5s infinite ease-in-out 2s;
-  position: absolute;
-}
-
-/* -------- Burger Menu -------- */
+/* Burger Menu  */
 /* Burger-knap */
 .burger {
   display: none;
@@ -372,6 +211,174 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* ------------------------------------------------ */
+
+/* Hero sektion */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 4rem;
+  position: relative;
+}
+
+.hero-left {
+  position: relative;
+  margin-right: -10rem;
+  z-index: 2;
+  margin-top: 15rem;
+  display: inline-block;
+}
+
+.hero-right {
+  position: relative;
+  margin-left: -8rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 42rem;
+  height: auto;
+  display: block;
+}
+
+.title {
+  margin: 0;
+  position: relative;
+  line-height: 1.1;
+}
+
+.title .name {
+  font-family: "Hourglass of Shine";
+  color: #0f3c65;
+  font-size: clamp(2rem, 4vw, 4.375rem);
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin-bottom: -2.5rem;
+  margin-left: 3.5rem;
+}
+
+.portfolio {
+  font-size: clamp(4rem, 15vw, 16rem);
+  color: #41729f;
+  font-family: "impact";
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.875rem);
+  color: #0f3c65;
+  font-family: "Quicksand Regular";
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 3;
+  margin-left: 5.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #0f3c65;
+  width: 0;
+  animation: typing 4s steps(55, end) forwards, blink 0.75s step-end 7 forwards;
+}
+
+/* Skrive animation i hero-sektionen */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 46ch;
+  }
+}
+
+/* Cursor blink i animationen */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0f3c65;
+  }
+}
+
+/* Stjerne blinke animation */
+
+@keyframes blinkStar {
+  0%,
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30%,
+  60% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.star {
+  position: absolute;
+  z-index: 4;
+}
+
+.star1 {
+  top: 5%;
+  left: 15%;
+  width: 110px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out;
+}
+
+.star2 {
+  top: 15%;
+  left: 20%;
+  width: 64px;
+  height: auto;
+  animation: blinkStar 3s infinite ease-in-out 1s;
+}
+.star3 {
+  top: 65%;
+  left: -5%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 1.5s infinite ease-in-out 0.5s;
+  position: absolute;
+}
+
+.hero-right .star4 {
+  top: 30%;
+  right: 91%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 4s infinite ease-in-out;
+  position: absolute;
+}
+
+.hero-right .star5 {
+  top: 20%;
+  right: 4%;
+  width: 85px;
+  height: auto;
+  animation: blinkStar 2.5s infinite ease-in-out 2s;
+  position: absolute;
+}
+
+/* ------------------------------------------------ */
+
+/* Om mig sektionen */
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -471,7 +478,9 @@ body.menu-open {
   animation: blinkStar 4s infinite ease-in-out;
 }
 
-/* Basis reveal (skjult) */
+/* ------------------------------------------------ */
+
+/* Reveal animationer */
 .reveal {
   opacity: 0;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -497,7 +506,7 @@ body.menu-open {
   transform: translateX(80px);
 }
 
-/* --- Speciel reveal til stjerner --- */
+/* Speciel reveal-animation til stjerner */
 .reveal-star {
   transform: scale(0.5);
 }
@@ -509,13 +518,15 @@ body.menu-open {
   animation: blinkStar 3s infinite ease-in-out; /* blink når de er kommet ind */
 }
 
+/* ------------------------------------------------ */
+
+/* Skills sektion */
 .skills {
   padding: 6rem 2rem;
   text-align: center;
   padding-bottom: 15rem;
 }
 
-/* Titel */
 .skills-title {
   display: flex;
   align-items: center;
@@ -556,7 +567,7 @@ body.menu-open {
   transition-delay: 0.4s;
 }
 
-/* Ikoner */
+/* Skills ikoner */
 .skills-icons {
   margin-top: 3rem;
   display: flex;
@@ -570,7 +581,6 @@ body.menu-open {
   height: auto;
 }
 
-/* Basis (skjult) */
 .icon {
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -618,12 +628,15 @@ body.menu-open {
   transition-delay: 0.8s;
 }
 
-/* Hover – hurtig og uden delay */
+/* Hover effekt på skills ikoner */
 .icon.reveal:hover {
   transform: scale(1.2);
   transition: transform 0.2s ease !important; /* overskriv delays */
 }
 
+/* ------------------------------------------------ */
+
+/* Projekter sektion */
 .projects {
   padding: 6rem 4rem;
   text-align: center;
@@ -638,17 +651,16 @@ body.menu-open {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-items: center;
-  max-width: 1500px; /* eller hvad du synes */
+  max-width: 1500px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Projektkort */
 .project {
   max-width: 80%;
   text-align: center;
   opacity: 0;
-  transform: translateX(200px); /* starter ude til højre */
+  transform: translateX(200px);
   transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1),
     transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -665,17 +677,18 @@ body.menu-open {
 }
 
 .project:nth-child(2) img {
-  width: 100%; /* midterbilledet større */
+  width: 100%;
 }
 
 .project:nth-child(1) img {
-  margin-top: 1.5rem; /* midterbilledet større */
+  margin-top: 1.5rem;
 }
 
 .project:nth-child(3) img {
-  margin-top: 1.5rem; /* midterbilledet større */
+  margin-top: 1.5rem;
 }
 
+/* Hover effekt på projektbilleder */
 .project img:hover {
   transform: scale(1.05);
 }
@@ -687,7 +700,6 @@ body.menu-open {
   font-size: 1.5rem;
 }
 
-/* Overskrift nederst */
 .projects-title {
   opacity: 0;
   transform: translateX(-150px);
@@ -755,16 +767,17 @@ body.menu-open {
 .star10.active {
   opacity: 1;
   transform: translateX(0);
-  /* Start blink først når slide-in (1.5s) er færdig */
   animation: blinkStar 3s infinite ease-in-out;
   animation-delay: 1.5s;
 }
 
-/* Vil du stadig have forskudt blink på star10? Læg ekstra delay på */
 .star10.active {
-  animation-delay: 2.3s; /* 1.5s slide + 0.8s forskydning */
+  animation-delay: 2.3s;
 }
 
+/* ------------------------------------------------ */
+
+/* Kontakt sektion */
 .contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -791,12 +804,16 @@ body.menu-open {
 }
 
 .contact-info p {
+  margin-bottom: 1.2rem;
+}
+
+.contact-info a {
   display: flex;
   align-items: center;
   font-family: "Quicksand Regular";
   font-size: 2rem;
-  margin-bottom: 1.2rem;
   color: #0f3c65;
+  text-decoration: none;
 }
 
 .contact-info img {
@@ -804,9 +821,10 @@ body.menu-open {
   margin-right: 1.5rem;
 }
 
+/* Hover effekt på kontakt ikoner */
 .contact-info img:hover {
-  filter: drop-shadow(0 0 6px #41729f); /* glow i mørkere blå */
-  transform: scale(1.05); /* lidt større */
+  filter: drop-shadow(0 0 6px #41729f);
+  transform: scale(1.05);
   transition: all 0.3s ease;
 }
 
@@ -831,7 +849,6 @@ body.menu-open {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Når hele blokken aktiveres */
 .contact-info.reveal-up.active p {
   opacity: 1;
   transform: translateY(0);
@@ -864,6 +881,9 @@ body.menu-open {
   animation: blinkStar 4s infinite ease-in-out 1s;
 }
 
+/* ------------------------------------------------ */
+
+/* Footer */
 footer {
   display: flex;
   align-items: center;
@@ -881,8 +901,9 @@ footer p {
   margin-right: 10rem;
 }
 
-/* Projektsider */
+/* ------------------------------------------------ */
 
+/* Projektsider */
 .project-page,
 .project-p4 {
   display: flex;
@@ -897,14 +918,14 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .brandmateriale img {
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 90vw);
 }
 
-/* Venstre side (tekst) */
 .project-left {
   flex: 1;
 }
@@ -932,7 +953,6 @@ footer p {
   color: #41729f;
 }
 
-/* Højre side (billede) */
 .project-right {
   flex: 1;
   display: flex;
@@ -944,12 +964,12 @@ footer p {
 }
 
 .project-right img:nth-child(2) {
-  margin-top: 10rem; /* ekstra afstand fra det første */
+  margin-top: 10rem;
   width: 50%;
 }
 
 .project-page.zerobuzzbrew .project-right {
-  margin-top: -2rem; /* eller hvad du vil have */
+  margin-top: -2rem;
 }
 
 .project-page.zerobuzzbrew.project-page {
@@ -977,7 +997,7 @@ footer p {
   margin-top: 4rem;
 }
 
-/* Links til GitHub / live projekt */
+/* Links til GitHub og produktet */
 .project-links {
   display: flex;
   flex-direction: column;
@@ -996,19 +1016,22 @@ footer p {
   gap: 1rem;
 }
 
+/* Hover effekt på links */
 .project-links a:hover {
   transform: scale(1.01);
   color: #0f3c65;
 }
+
 .project-links .link-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
 
+/* Næste/forrige projekt links */
 .next-prev-links {
   display: flex;
-  justify-content: space-between; /* højre side */
+  justify-content: space-between;
   gap: 2rem;
   padding: 6rem 0 4rem 0;
 }
@@ -1181,6 +1204,68 @@ footer p {
   .footer-right {
     margin: 0;
   }
+  .project-page,
+  .project-p4 {
+    flex-direction: column;
+    padding: 0 3rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .project-left {
+    order: 1;
+  }
+
+  .project-right {
+    order: 2;
+    margin-top: 2rem;
+  }
+
+  .project-title {
+    padding: 0 3rem;
+    text-align: center;
+  }
+
+  .project-title h1 {
+    font-size: 4rem;
+  }
+
+  .project-title h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .next-prev-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    gap: 1rem;
+  }
+
+  .next-prev-links .prev,
+  .next-prev-links .next {
+    padding: 0;
+    text-align: center;
+  }
+  .project-page.radar .project-right img:nth-child(1) {
+    margin-top: 10rem;
+  }
+  .brandmateriale {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .skills {
+    padding: 4rem 2rem;
+  }
+
+  .skills-title h2 {
+    font-size: 2rem; /* lidt mindre titel */
+  }
+
+  .skills-icons img {
+    width: 80px; /* ikoner lidt mindre */
+  }
 }
 
 /* Mobil (max 768px) */
@@ -1337,11 +1422,95 @@ footer p {
     margin-top: 5rem;
   }
 
+  .contact-left {
+    position: relative;
+    z-index: 2; /* sørger for at links altid er øverst */
+  }
+
+  .contact-right {
+    position: relative;
+    z-index: 1; /* billede og stjerner bag links */
+  }
+
   footer {
     flex-direction: column;
     text-align: center;
     padding: 2rem 1.5rem;
     gap: 1rem;
+  }
+
+  .project-page,
+  .project-p4 {
+    padding: 0 1.5rem;
+  }
+
+  .project-left h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-left p,
+  .project-p4 {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .project-right img {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .project-right img:nth-child(2) {
+    margin-top: 2rem;
+    width: 60%;
+  }
+
+  .project-page.radar .project-right img:nth-child(1) {
+    margin-top: 10rem;
+  }
+
+  .brandmateriale {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .brandmateriale img {
+    max-width: 80%;
+  }
+
+  .project-links {
+    padding: 2rem 0 0 0;
+    align-items: center;
+  }
+
+  .project-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-title h2 {
+    font-size: 2rem;
+    margin-top: -2rem;
+    margin-left: 0;
+  }
+
+  .star13,
+  .star14 {
+    display: none; /* skjul stjerner på små skærme */
+  }
+
+  .skills {
+    padding: 4rem 2rem;
+  }
+
+  .skills-title h2 {
+    font-size: 2rem; /* lidt mindre titel */
+  }
+
+  .skills-icons img {
+    width: 80px; /* ikoner lidt mindre */
+  }
+  .icon {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
   }
 }
 

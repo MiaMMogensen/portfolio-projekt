@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router";
+import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Header from "../components/Header";
-import projects from "../assets/data/projects.json";
 import githubIcon from "/img/github.png";
 import starBig from "/img/star-big.png";
 
@@ -19,8 +19,34 @@ function formatText(text) {
     );
 }
 
+function withBase(path) {
+  if (!path) return null;
+  const base = import.meta.env.BASE_URL; // fx "/" lokalt eller "/repo-navn/" på GitHub Pages
+  return `${base}${path.replace(/^\//, "")}`;
+}
+
 export default function ProjectDetail() {
   const { id } = useParams(); // f.eks. "rejsedagbog"
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/projects.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Kunne ikke hente projects.json:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <p>Indlæser projekt...</p>;
+  }
+
   const projectIndex = projects.findIndex((p) => p.id === id);
   const project = projects[projectIndex];
 
@@ -63,9 +89,12 @@ export default function ProjectDetail() {
           </div>
 
           <div className="project-right">
-            <img src={project.image} alt={project.name} />
+            <img src={withBase(project.image)} alt={project.name} />
             {project.image2 && (
-              <img src={project.image2} alt={`${project.name} ekstra`} />
+              <img
+                src={withBase(project.image2)}
+                alt={`${project.name} ekstra`}
+              />
             )}
           </div>
         </section>
@@ -73,9 +102,9 @@ export default function ProjectDetail() {
         {/* Specifikke ekstra-sektioner kun for nogle projekter */}
         {project.brochure && (
           <div className="brandmateriale">
-            <img src={project.brochure} alt="brochure" />
-            <img src={project.tshirt} alt="tshirt" />
-            <img src={project.visitkort} alt="visitkort" />
+            <img src={withBase(project.brochure)} alt="brochure" />
+            <img src={withBase(project.tshirt)} alt="tshirt" />
+            <img src={withBase(project.visitkort)} alt="visitkort" />
           </div>
         )}
 

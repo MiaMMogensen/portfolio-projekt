@@ -2,7 +2,7 @@ import { Route, Routes, Navigate, useLocation } from "react-router";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
-import ProjectDetail from "./components/ProjectDetail";
+import ProjectDetail from "./pages/ProjectDetail";
 import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {

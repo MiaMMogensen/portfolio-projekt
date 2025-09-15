@@ -1,8 +1,8 @@
-import contactImg from "/img/contact-img.png";
-import mail from "/img/mail.png";
-import github from "/img/github.png";
-import linkedin from "/img/linkedin.png";
-import starBig from "/img/star-big.png";
+import contactImg from "../assets/img/contact-img.png";
+import mail from "../assets/img/mail.png";
+import github from "../assets/img/github.png";
+import linkedin from "../assets/img/linkedin.png";
+import starBig from "../assets/img/star-big.png";
 import useReveal from "../hooks/useReveal";
 
 export default function Contact() {

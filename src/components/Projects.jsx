@@ -1,8 +1,8 @@
 import useReveal from "../hooks/useReveal";
-import rejseImg from "/img/rejsedagbog-projekt.png";
-import zeroImg from "/img/zero-projekt.png";
-import radarImg from "/img/radar-projekt.png";
-import starBig from "/img/star-big.png";
+import rejseImg from "../assets/img/rejsedagbog-projekt.png";
+import zeroImg from "../assets/img/zero-projekt.png";
+import radarImg from "../assets/img/radar-projekt.png";
+import starBig from "../assets/img/star-big.png";
 import { Link } from "react-router";
 
 export default function Projects() {

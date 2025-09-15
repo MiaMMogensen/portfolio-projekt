@@ -1,5 +1,5 @@
-import forsideImg from "/img/forside-img.png";
-import starBig from "/img/star-big.png";
+import forsideImg from "../assets/img/forside-img.png";
+import starBig from "../assets/img/star-big.png";
 
 export default function Hero() {
   return (

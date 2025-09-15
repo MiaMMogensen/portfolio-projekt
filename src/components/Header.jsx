@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import logo from "/img/logo.png";
-import mail from "/img/mail.png";
-import github from "/img/github.png";
-import linkedin from "/img/linkedin.png";
+import logo from "../assets/img/logo.png";
+import mail from "../assets/img/mail.png";
+import github from "../assets/img/github.png";
+import linkedin from "../assets/img/linkedin.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

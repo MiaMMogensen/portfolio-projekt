@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Header from "../components/Header";
-import githubIcon from "/img/github.png";
-import starBig from "/img/star-big.png";
+import githubIcon from "../assets/img/github.png";
+import starBig from "../assets/img/star-big.png";
 
 function formatText(text) {
   if (!text) return null;

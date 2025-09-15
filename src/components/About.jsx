@@ -1,5 +1,5 @@
-import aboutImg from "/img/about-img.png";
-import starBig from "/img/star-big.png";
+import aboutImg from "../assets/img/about-img.png";
+import starBig from "../assets/img/star-big.png";
 import useReveal from "../hooks/useReveal";
 
 function RevealText({ children, refProp, isActive, className }) {

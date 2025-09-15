@@ -7,6 +7,7 @@ body {
   background-color: #edeee8;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
 
 a {
@@ -1492,8 +1493,7 @@ footer p {
     margin-left: 0;
   }
 
-  .star13,
-  .star14 {
+  .star {
     display: none; /* skjul stjerner på små skærme */
   }
 

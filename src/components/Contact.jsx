@@ -63,7 +63,12 @@ export default function Contact() {
         }`}
       >
         <div className="contact-img-wrapper">
-          <img src={contactImg} alt="Mia Mogensen" className="contact-img" />
+          <img
+            src={contactImg}
+            alt="Mia Mogensen"
+            className="contact-img"
+            loading="lazy"
+          />
           <img src={starBig} alt="stjerne" className="star star11" />
           <img src={starBig} alt="stjerne" className="star star12" />
         </div>

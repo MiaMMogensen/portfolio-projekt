@@ -2,6 +2,17 @@ import aboutImg from "/img/about-img.png";
 import starBig from "/img/star-big.png";
 import useReveal from "../hooks/useReveal";
 
+function RevealText({ children, refProp, isActive, className }) {
+  return (
+    <p
+      ref={refProp}
+      className={`${className} reveal reveal-up ${isActive ? "active" : ""}`}
+    >
+      {children}
+    </p>
+  );
+}
+
 export default function About() {
   const [titleRef, titleActive] = useReveal();
   const [p1Ref, p1Active] = useReveal();
@@ -12,6 +23,12 @@ export default function About() {
   const [star1Ref, star1Active] = useReveal();
   const [star2Ref, star2Active] = useReveal();
   const [star3Ref, star3Active] = useReveal();
+
+  const stars = [
+    { ref: star1Ref, active: star1Active, className: "star star6" },
+    { ref: star2Ref, active: star2Active, className: "star star7" },
+    { ref: star3Ref, active: star3Active, className: "star star8" },
+  ];
 
   return (
     <>
@@ -28,33 +45,30 @@ export default function About() {
 
       <section className="about">
         <div className="about-left">
-          <p
-            ref={p1Ref}
-            className={`about-text-short reveal reveal-up ${
-              p1Active ? "active" : ""
-            }`}
+          <RevealText
+            refProp={p1Ref}
+            isActive={p1Active}
+            className="about-text-short"
           >
             Jeg er en <strong>kreativ</strong> og{" "}
             <strong>nysgerrig multimediedesignstuderende</strong> med{" "}
             <strong>passion for frontend-udvikling</strong>. For mig er
             programmering ikke bare noget, jeg laver - det er noget, jeg nyder.
-          </p>
+          </RevealText>
 
-          <p
-            ref={p2Ref}
-            className={`about-text-short reveal reveal-up ${
-              p2Active ? "active" : ""
-            }`}
+          <RevealText
+            refProp={p2Ref}
+            isActive={p2Active}
+            className="about-text-short"
           >
             Jeg elsker processen med at finde løsninger, og der er noget helt
             særligt ved den følelse, jeg får, når koden lykkes.
-          </p>
+          </RevealText>
 
-          <p
-            ref={p3Ref}
-            className={`about-text-medium reveal reveal-up ${
-              p3Active ? "active" : ""
-            }`}
+          <RevealText
+            refProp={p3Ref}
+            isActive={p3Active}
+            className="about-text-medium"
           >
             Jeg ønsker at <strong>udvikle mig</strong> som både{" "}
             <strong>person og udvikler</strong>, og jeg tror på, at jeg kan nå
@@ -63,19 +77,18 @@ export default function About() {
             praktikplads som frontend-udvikler, hvor jeg kan bidrage til
             spændende projekter og samtidig blive endnu bedre til det, jeg
             brænder for.
-          </p>
+          </RevealText>
 
-          <p
-            ref={p4Ref}
-            className={`about-text-long reveal reveal-up ${
-              p4Active ? "active" : ""
-            }`}
+          <RevealText
+            refProp={p4Ref}
+            isActive={p4Active}
+            className="about-text-long"
           >
             Min <strong>kreative side</strong> udfolder jeg også i fritiden,
             hvor jeg elsker at fordybe mig i hobbyer som hækling, broderi,
             læsning og musik. Det giver mig ro og inspiration, og styrker min
             evne til at tænke kreativt.
-          </p>
+          </RevealText>
         </div>
 
         <div
@@ -85,32 +98,26 @@ export default function About() {
           }`}
         >
           <div className="about-img-wrapper">
-            <img src={aboutImg} alt="Mia Mogensen" className="about-img" />
+            <img
+              src={aboutImg}
+              alt="Mia Mogensen"
+              className="about-img"
+              loading="lazy"
+            />
 
-            <img
-              ref={star1Ref}
-              src={starBig}
-              alt="stjerne"
-              className={`star star6 reveal reveal-right ${
-                star1Active ? "active" : ""
-              }`}
-            />
-            <img
-              ref={star2Ref}
-              src={starBig}
-              alt="stjerne"
-              className={`star star7 reveal reveal-right ${
-                star2Active ? "active" : ""
-              }`}
-            />
-            <img
-              ref={star3Ref}
-              src={starBig}
-              alt="stjerne"
-              className={`star star8 reveal reveal-right ${
-                star3Active ? "active" : ""
-              }`}
-            />
+            {stars.map((star, i) => (
+              <img
+                key={i}
+                ref={star.ref}
+                src={starBig}
+                alt=""
+                role="presentation"
+                loading="lazy"
+                className={`${star.className} reveal reveal-right ${
+                  star.active ? "active" : ""
+                }`}
+              />
+            ))}
           </div>
         </div>
       </section>

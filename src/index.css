@@ -1408,7 +1408,7 @@ footer p {
     margin: 0.5rem 0 0 0;
   }
 
-  .contact-info p {
+  .contact-info a {
     font-size: 1rem;
     margin-bottom: 1rem;
   }

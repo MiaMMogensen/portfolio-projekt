@@ -1,4 +1,3 @@
-// src/hooks/useReveal.js
 import { useEffect, useRef, useState } from "react";
 
 export default function useReveal() {
@@ -6,24 +5,25 @@ export default function useReveal() {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
+    const node = ref.current; // gem reference
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActive(true);
-            observer.unobserve(entry.target); // kun én gang
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(node);
     };
   }, []);
 

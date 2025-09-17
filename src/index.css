@@ -1315,15 +1315,24 @@ footer p {
   }
 
   .title .name {
-    margin: 0 0 0.5rem 0; /* fjern overlap */
+    margin: 0 0 0.5rem 0;
     display: block;
   }
   .hero-right img {
     max-width: 20rem;
   }
+
   .subtitle {
+    animation: none !important;
+    border-right: none;
+    width: auto;
+    white-space: normal;
+    text-align: center;
+    margin: 10px auto;
+    display: inline-block;
     font-size: 1rem;
   }
+
   .star3,
   .star4,
   .star5 {

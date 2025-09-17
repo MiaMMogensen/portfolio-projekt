@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import logo from "../assets/img/logo.png";
 import mail from "../assets/img/mail.png";
 import github from "../assets/img/github.png";
@@ -7,6 +7,8 @@ import linkedin from "../assets/img/linkedin.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
 
   useEffect(() => {
     if (menuOpen) {
@@ -15,6 +17,29 @@ export default function Header() {
       document.body.classList.remove("menu-open");
     }
   }, [menuOpen]);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 } // kræver at 60% af sektionen er synlig
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/projects/")) {
+      setActiveSection("projects");
+    }
+  }, [location]);
 
   return (
     <header>
@@ -28,17 +53,29 @@ export default function Header() {
         <nav className="nav-center">
           <ul>
             <li>
-              <Link to="/" state={{ section: "about" }}>
+              <Link
+                to="/"
+                state={{ section: "about" }}
+                className={activeSection === "about" ? "active" : ""}
+              >
                 Om mig
               </Link>
             </li>
             <li>
-              <Link to="/" state={{ section: "projects" }}>
+              <Link
+                to="/"
+                state={{ section: "projects" }}
+                className={activeSection === "projects" ? "active" : ""}
+              >
                 Projekter
               </Link>
             </li>
             <li>
-              <Link to="/" state={{ section: "contact" }}>
+              <Link
+                to="/"
+                state={{ section: "contact" }}
+                className={activeSection === "contact" ? "active" : ""}
+              >
                 Kontakt
               </Link>
             </li>

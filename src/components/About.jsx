@@ -33,7 +33,6 @@ export default function About() {
   return (
     <>
       <div
-        id="about"
         ref={titleRef}
         className={`about-title reveal reveal-left ${
           titleActive ? "active" : ""
@@ -43,7 +42,7 @@ export default function About() {
         <h2 className="mia">MIA?</h2>
       </div>
 
-      <section className="about">
+      <section id="about" className="about">
         <div className="about-left">
           <RevealText
             refProp={p1Ref}

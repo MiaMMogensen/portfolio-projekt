@@ -6,8 +6,20 @@ body {
   padding: 0;
   background-color: #edeee8;
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
   overflow-x: hidden;
+}
+
+#home {
+  scroll-margin-top: 100px;
+}
+
+#about {
+  scroll-margin-top: 400px;
+}
+
+#projects,
+#contact {
+  scroll-margin-top: 0;
 }
 
 a {
@@ -85,6 +97,11 @@ header {
   color: #41729f;
   display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-center a.active {
+  text-shadow: 0 0 8px #41729f;
+  transform: scale(1.05);
 }
 
 .social-media-icons {

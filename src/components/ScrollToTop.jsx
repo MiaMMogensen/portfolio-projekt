@@ -1,4 +1,3 @@
-// components/ScrollToTop.jsx
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
@@ -8,7 +7,7 @@ export default function ScrollToTop() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 500); // matcher din transition.duration i ProjectDetail (0.6s)
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, [pathname]);

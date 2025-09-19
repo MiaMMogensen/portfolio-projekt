@@ -13,7 +13,6 @@ export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="contact-left">
-        {/* Overskrift glider ind fra venstre */}
         <div
           ref={titleRef}
           className={`contact-title reveal reveal-left ${
@@ -24,7 +23,6 @@ export default function Contact() {
           <h2 className="create">skabe noget sammen</h2>
         </div>
 
-        {/* Kontaktpunkter kommer nedefra (stagger) */}
         <div
           ref={infoRef}
           className={`contact-info reveal-up ${infoVisible ? "active" : ""}`}
@@ -55,7 +53,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Billedet glider ind fra højre */}
       <div
         ref={imgRef}
         className={`contact-right reveal reveal-right ${

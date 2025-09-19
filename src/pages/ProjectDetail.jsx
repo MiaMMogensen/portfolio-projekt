@@ -21,12 +21,12 @@ function formatText(text) {
 
 function withBase(path) {
   if (!path) return null;
-  const base = import.meta.env.BASE_URL; // fx "/" lokalt eller "/repo-navn/" på GitHub Pages
+  const base = import.meta.env.BASE_URL;
   return `${base}${path.replace(/^\//, "")}`;
 }
 
 export default function ProjectDetail() {
-  const { id } = useParams(); // f.eks. "rejsedagbog"
+  const { id } = useParams();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 

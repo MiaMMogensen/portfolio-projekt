@@ -28,7 +28,7 @@ export default function Header() {
           }
         });
       },
-      { threshold: 0.4 } // kræver at 60% af sektionen er synlig
+      { threshold: 0.4 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -83,12 +83,10 @@ export default function Header() {
         </nav>
 
         <div className="social-media-icons">
-          {/* Mail – åbner brugerens mailprogram */}
           <a href="mailto:miamogensen2@gmail.com">
             <img src={mail} alt="mail icon" />
           </a>
 
-          {/* GitHub – åbner i ny fane */}
           <a
             href="https://github.com/MiaMMogensen"
             target="_blank"
@@ -97,7 +95,6 @@ export default function Header() {
             <img src={github} alt="github icon" />
           </a>
 
-          {/* LinkedIn – åbner i ny fane */}
           <a
             href="https://www.linkedin.com/in/mia-mogensen-5815b4325/"
             target="_blank"

@@ -52,7 +52,7 @@ export default function About() {
             Jeg er en <strong>kreativ</strong> og{" "}
             <strong>nysgerrig multimediedesignstuderende</strong> med{" "}
             <strong>passion for frontend-udvikling</strong>. For mig er
-            programmering ikke bare noget, jeg laver - det er noget, jeg nyder.
+            programmering ikke bare noget, jeg laver, det er noget, jeg nyder.
           </RevealText>
 
           <RevealText
